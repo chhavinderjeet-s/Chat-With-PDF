@@ -4,6 +4,26 @@ This project enables conversational interaction with PDF documents using a Retri
 
 In addition to basic RAG functionality, this project includes evaluation metrics, rate limiting, and a simulated model registry to demonstrate core MLOps concepts such as model comparison and gated deployment.
 
+## Architecture
+```
+Chat-With-PDF/
+│
+├── app/
+├── evaluation/
+├── rate_limit/
+├── model_registry/
+│   └── production_model.json
+├── artifacts/
+│   └── metrics.json
+├── deployment/
+│   ├── deploy.py
+│   └── deployed_model/
+├── faiss_db/
+├── README.md
+└── requirements.txt
+
+```
+
 ## Features
 
 - **PDF Upload**: Users can upload one or multiple PDF files containing the information they want to inquire about.
@@ -38,7 +58,8 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/sagnik-datta-02/ChatwithPDF.git
+git clone https://github.com/chhavinderjeet-s/Chat-With-PDF
+cd Chat-With-PDF
 ```
 
 2. Install the required dependencies:
@@ -77,3 +98,7 @@ streamlit run app/main.py
 - [OpenAI](https://platform.openai.com/docs/overview)
 - [spaCy](https://spacy.io)
 - [python-dotenv](https://github.com/theskumar/python-dotenv)
+
+# Reflection
+
+Using a coding assistant helped me move significantly faster, especially during the initial setup of the project structure and while refactoring the code into modular components. It was particularly useful for suggesting clean patterns for evaluation pipelines, deployment gating logic, and organizing the Streamlit application. In a few cases, the assistant generated suggestions that were either too complex or not fully aligned with the project’s scope, which required manual simplification. I also had to carefully review evaluation logic to ensure the metrics made sense for a RAG-based system. The assistant was most helpful for boilerplate code, architectural guidance, and identifying missing MLOps components. It was least useful when precise design decisions or trade-offs were required, where human judgment was still necessary. Overall, it acted as a strong productivity aid but required validation and iteration to ensure correctness and clarity.
