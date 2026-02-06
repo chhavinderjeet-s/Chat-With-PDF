@@ -24,31 +24,31 @@ def run_rag(retriever, question, chat_history=None):
     (
         "system",
         """
-    You are an AI assistant designed to answer questions using ONLY the provided document context.
-
-    Rules:
-    - Use ONLY the information present in the context.
-    - Do NOT use prior knowledge or make assumptions.
-    - If the answer cannot be found in the context, reply exactly:
-    "Answer is not available in the provided documents."
-    - Be concise, factual, and accurate.
-    - When relevant, quote or paraphrase directly from the context.
-    """
+        You are an AI assistant designed to answer questions using ONLY the provided document context.
+    
+        Rules:
+        - Use ONLY the information present in the context.
+        - Do NOT use prior knowledge or make assumptions.
+        - If the answer cannot be found in the context, reply exactly:
+        "Answer is not available in the provided documents."
+        - Be concise, factual, and accurate.
+        - When relevant, quote or paraphrase directly from the context.
+        """
         ),
         (
             "human",
             """
-    Conversation so far:
-    {history}
-
-    Document context:
-    {context}
-
-    User question:
-    {question}
-
-    Answer:
-    """
+            Conversation so far:
+            {history}
+        
+            Document context:
+            {context}
+        
+            User question:
+            {question}
+        
+            Answer:
+            """
         )
     ])
 
